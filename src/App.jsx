@@ -4,6 +4,9 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Import from './pages/Import';
+import Settings from './pages/Settings';
+import Team from './pages/Team';
+import Admin from './pages/Admin';
 
 function Protected({ children }) {
   const { user, loading } = useAuth();
