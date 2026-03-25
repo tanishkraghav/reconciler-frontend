@@ -1,16 +1,17 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
-import Login from './pages/Login';
+import Landing  from './pages/Landing';
+import Login    from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Import from './pages/Import';
+import Import   from './pages/Import';
 import Settings from './pages/Settings';
-import Team from './pages/Team';
-import Admin from './pages/Admin';
+import Team     from './pages/Team';
+import Admin    from './pages/Admin';
 
 function Protected({ children }) {
   const { user, loading } = useAuth();
-  if (loading) return <div className="min-h-screen bg-bg flex items-center justify-center text-muted text-sm">Loading…</div>;
+  if (loading) return <div className="min-h-screen bg-[#0c0e10] flex items-center justify-center text-[#5a6270] text-sm">Loading…</div>;
   return user ? children : <Navigate to="/login" replace />;
 }
 
@@ -24,27 +25,18 @@ export default function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-
         <Routes>
-
-          {/* redirect */}
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-
-          {/* auth */}
-          <Route path="/login" element={<Guest><Login /></Guest>} />
-          <Route path="/register" element={<Guest><Register /></Guest>} />
-
-          {/* protected */}
+          <Route path="/"          element={<Landing />} />
+          <Route path="/login"     element={<Guest><Login /></Guest>} />
+          <Route path="/register"  element={<Guest><Register /></Guest>} />
           <Route path="/dashboard" element={<Protected><Dashboard /></Protected>} />
-          <Route path="/import" element={<Protected><Import /></Protected>} />
-          <Route path="/settings" element={<Protected><Settings /></Protected>} />
-          <Route path="/team" element={<Protected><Team /></Protected>} />
-          <Route path="/admin" element={<Protected><Admin /></Protected>} />
-
+          <Route path="/import"    element={<Protected><Import /></Protected>} />
+          <Route path="/settings"  element={<Protected><Settings /></Protected>} />
+          <Route path="/team"      element={<Protected><Team /></Protected>} />
+          <Route path="/admin"     element={<Protected><Admin /></Protected>} />
+          <Route path="*"          element={<Navigate to="/" replace />} />
         </Routes>
-
       </BrowserRouter>
     </AuthProvider>
   );
 }
- 
