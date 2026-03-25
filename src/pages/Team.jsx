@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/layout';
 import api from '../utils/api';
 
 const ROLES = ['admin','member','viewer'];

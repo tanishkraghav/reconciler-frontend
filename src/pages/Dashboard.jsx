@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/layout';
 import StatusPill from '../components/StatusPill';
 import api from '../utils/api';
 
