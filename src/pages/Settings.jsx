@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/layout';
 import api from '../utils/api';
 
 const CURRENCIES = ['USD','GBP','EUR','INR','AUD','CAD','SGD','AED'];
