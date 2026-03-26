@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import Papa from 'papaparse';
-import Layout from '../components/layout/Layout';
+import Layout from '../components/layout/layout';
 import api from '../utils/api';
 
 export default function Import() {
